@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <script>
+        // function hello(){
+        //    if (document.querySelector("h1").innerHTML === "Hello!"){
+        //        document.querySelector("h1").innerHTML = "Yasin";
+        //    } else {
+        //        document.querySelector("h1").innerHTML = "Hello!";
+        //    }
+
+
+        // const heading = document.querySelector("h1");
+        // if (heading.innerHTML === "Hello!"){
+        //     heading.innerHTML = "Yasin";
+        // } else {
+        //     heading.innerHTML = "Hello!";
+        // }
+        // }
+
+        document.addEventListener("DOMContentLoaded", function(){
+            document.querySelector("form").onsubmit = function(){
+            let name = document.querySelector("#name").value;
+            alert(`Hello ${name}`);
+        };
+
+        })
+
+
+       
+        
+
+    </script>
+</head>
+<body>
+    <h1>Hello!</h1>
+    <form>
+        <input id="name" type="text" placeholder="Name">
+        <input type="submit">
+    </form>
+    
+</body>
+</html>
