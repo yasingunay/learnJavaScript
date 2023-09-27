@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Animate</title>
+    <style>
+        @keyframes hide {
+            0%{
+                opacity: 1;
+                height: 100%;
+                line-height: 100%;
+            }
+
+            75%{
+                opacity: 0;
+                height: 100%;
+                line-height: 100%;
+            }
+
+            100%{
+                height: 0px;
+                opacity: 0;
+                line-height: 0px;
+            }
+        }
+
+
+
+        .container{
+            margin-top: 10px;
+            background-color: green;
+            width: auto;
+            height: 50px;
+            animation-name: hide;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            document.addEventListener("click", event=>{
+                const element = event.target;
+                if(element.className === "hide"){
+                    element.parentElement.style.animationPlayState = "running";
+                    element.addEventListener("animationend", () =>{
+                        element.parentElement.remove();
+                    })
+                }
+
+            });
+        });
+        
+      
+    </script>
+</head>
+<body>
+  <div class="container">
+    <button class="hide">Hide</button>
+  </div>
+  <div class="container">
+    <button class="hide">Hide</button>
+  </div>
+  <div class="container">
+    <button class="hide">Hide</button>
+  </div>
+  
+</body>
+</html>
